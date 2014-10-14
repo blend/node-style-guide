@@ -563,3 +563,22 @@ Wrong:
 myFun(halfLengthExpression1, halfLengthExpression2,
           longExpressionXYZABCDEFGHIJK)
 ```
+
+## Use _.filter instead of _.each with an if statement
+
+Right:
+```js
+var output = _.filter(arr, function(x) {
+  return x === 3;
+})
+```
+
+Wrong:
+```js
+var output = [];
+_.each(arr, function(x) {
+  if (x === 3) {
+    output.push(x);
+  }
+});
+```
